@@ -19,18 +19,9 @@
 		var options = $.extend({
 			callback	: function(){},
 			timestamp	: 0,
-			startH : 100
-			endH:0,
-			sartS:100,
-			endS:100,
-			startB:100,
-			endB:100
 		},prop);
 		
-		var left, d, h, m, s, positions,
-			gradH = Math.floor((options.startH - options.endH) / Math.ceil(options.timestamp / 1000)),
-			gradS = Math.floor((options.startS - options.endS) / Math.ceil(options.timestamp / 1000)),
-			gradB = Math.floor((options.startB - options.endB) / Math.ceil(options.timestamp / 1000));
+		var left, d, h, m, s, positions;
 
 		// Initialize the plugin
 		init(this, options);
@@ -47,7 +38,6 @@
 				// Calling an optional user supplied callback
 				options.callback(d, h, m, s);
 			}
-			
 			// Number of days left
 			d = Math.floor(left / days);
 			//updateDuo(0, 1, d);
@@ -78,7 +68,6 @@
 			switchDigit(positions.eq(minor),Math.floor(value/10)%10);
 			switchDigit(positions.eq(major),value%10);
 		}
-		
 		return this;
 	};
 
@@ -89,12 +78,12 @@
 		// Creating the markup inside the container
 		$.each(['Minutes','Seconds'],function(i){
 			$('<span class="count'+this+'">').html(
-				'<span class="position">\
-					<span class="digit static">0</span>\
-				</span>\
-				<span class="position">\
-					<span class="digit static">0</span>\
-				</span>'
+				'<span class="position">' +
+					'<span class="digit static">0</span>' +
+				'</span>' +
+				'<span class="position">' +
+					'<span class="digit static">0</span>' +
+				'</span>'
 			).appendTo(elem);
 			
 			if(this!="Seconds"){
