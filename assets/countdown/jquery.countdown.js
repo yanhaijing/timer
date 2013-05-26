@@ -1,5 +1,5 @@
 /**
- * @name		jQuery Countdown Plugin
+ * @ncame		jQuery Countdown Plugin
  * @author		Martin Angelov
  * @version 	1.0
  * @url			http://tutorialzine.com/2011/12/countdown-jquery/
@@ -27,10 +27,9 @@
 		s, 
 		positions,
 		appid = 'timer' + (options.id || $(this).selector.replace(/\W/g, ''));//获取id，没有的话区则选择符
-		console.log(appid);
 		
 		// This function updates two digit positions at once
-        function updateDuo(minor,major,value){
+      function updateDuo(minor,major,value){
             switchDigit(positions.eq(minor),Math.floor(value/10)%10);
             switchDigit(positions.eq(major),value%10);
         }
