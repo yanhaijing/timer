@@ -91,7 +91,7 @@
 
 		// Creating the markup inside the container
 		$.each(['Minutes','Seconds'],function(i){
-			$('<span class="count'+this+'">').html(
+			$('<span class="count'+this+'"></span>').html(
 				'<span class="position">' +
 					'<span class="digit static">0</span>' +
 				'</span>' +

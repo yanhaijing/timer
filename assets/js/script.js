@@ -1,7 +1,7 @@
 $(function(){
 		
 	$('body #countdown').countdown({
-		timestamp	: (new Date()).getTime() + 7*1000,
+		timestamp	: (new Date()).getTime() + 70*1000,
 		callback:function(d, h, m, s){alert(d, h, m, s)},
 	});
 	window.setTimeout(function(){
